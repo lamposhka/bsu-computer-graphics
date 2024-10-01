@@ -23,6 +23,7 @@ class ColorConverterApp extends JFrame {
     private List<JSlider> hlsSliders = new ArrayList<>();
 
     private JPanel colorDisplayPanel = new JPanel();
+    private JPanel colorDisplayPanel2 = new JPanel();
 
     public ColorConverterApp() {
         setTitle("Color Converter");
@@ -66,9 +67,11 @@ class ColorConverterApp extends JFrame {
 
         add(colorDisplayPanel);
 
-        JButton colorChooserButton = new JButton("Open palette");
+
+        JButton colorChooserButton = new JButton("Choose");
         colorChooserButton.addActionListener(e -> chooseColor());
         add(colorChooserButton);
+        add(colorDisplayPanel2);
 
         rgbFields.forEach(field -> addDocumentListener(field, Changed.RGB));
         cmykFields.forEach(field -> addDocumentListener(field, Changed.CMYK));
@@ -230,6 +233,8 @@ class ColorConverterApp extends JFrame {
         int b = rgbColor.get(2);
         colorDisplayPanel.setBackground(new Color(r, g, b));
         colorDisplayPanel.repaint();
+        colorDisplayPanel2.setBackground(new Color(r, g, b));
+        colorDisplayPanel2.repaint();
     }
 
     private void updateSliders() {
