@@ -31,9 +31,10 @@ circle(Graphics g, int xc, int yc, int r)
 x1 = -100 y2 = 100
 y1 = -75 x2 = 75
 Для отрезка времена работы:
-step-by-step execution time: 4 milliseconds
-dda execution time: 5 milliseconds
-bresenham execution time: 4 milliseconds
+
+|step-by-step | dda      | bresenham |
+|-------------|----------|-----------|
+|4 ms         |5 ms      | 4ms       |
 x0 = 0
 y0 = 0
 R = 75
